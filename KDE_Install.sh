@@ -2,7 +2,8 @@
 
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 hwclock --systohc
-sed -i '178s/.//' /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "en_US ISO-8859-1" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "framework" >> /etc/hostname
@@ -11,7 +12,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 framework.localdomain framework" >> /etc/hosts
 sudo timedatectl set-ntp true
 
-echo root:password | chpasswd
+echo root:[password] | chpasswd
 
 #Installs Arch yay package manager
 git clone https://aur.archlinux.org/yay.git
@@ -41,7 +42,7 @@ systemctl enable acpid
 sudo systemctl enable sddm
 
 useradd -mG [username]
-echo [username]:password | chpasswd
+echo [username]:[password] | chpasswd
 echo "[username] ALL=(ALL) ALL" >> /etc/sudoers.d/username
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
