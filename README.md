@@ -28,7 +28,7 @@ So far I have instructions for how to do a single install of Arch on a LUKS encr
   * Add "btrfs" to the modules
   * Add "encrypt" to the Hooks before filesystems
   * Run "mkinitcpio -p linux" to recreate initramfs
-  * Run "git clone https://github.com/macJoshua/ArchInstall/" for the install script
+  * Run "git clone https://github.com/macJoshua/LinuxBuilds" for the install script
   * Modify the needed sections
   * Run "chmod +x KDE_Install.sh"
 
