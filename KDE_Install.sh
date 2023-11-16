@@ -33,6 +33,10 @@ echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch.conf
 echo "initrd  /initramfs-linux.img" >> /boot/loader/entries/arch.conf
 echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch.conf
 
+echo "title  Arch Linux" >> /boot/loader/entries/arch-fallback.conf
+echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch-fallback.conf
+echo "initrd  /initramfs-linux-fallback.img" >> /boot/loader/entries/arch-fallback.conf
+echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch-fallback.conf
 
 ##########################################################
 ###################Package Installation###################
