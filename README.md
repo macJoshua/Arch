@@ -20,7 +20,7 @@ So far I have instructions for how to do a single install of Arch on a LUKS encr
   * Run "mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/crypt /mnt/home" to mount the home subvolume under /mnt/home
   * Run "mount /dev/nvme0n1p1 /mnt/boot" to mount the boot partition under /mnt/boot
  
- # Installing base Arch Linux 
+ # Installing Arch Linux 
   * Run "pacstrap /mnt base linux linux-firmware nano git amd-ucode btrfs-progs" to install the base packages
   * Run "genfstab -U /mnt >> /mnt/etc/fstab" to generate fstab table in the Arch install
   * Run "arch-chroot /mnt" to enter the install
