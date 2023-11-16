@@ -1,4 +1,4 @@
-# Arch
+# Arch Install Guide
 Attempt to create a personal Arch install script/guide
 
 # LUKS Partition/Encryption Guide
