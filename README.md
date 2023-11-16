@@ -1,5 +1,6 @@
-# Arch Install Guide
-Attempt to create a personal Arch install script/guide
+# Linux Install Guide(s?)
+This is my personal Arch Install Guide and script(s) collection.
+So far I have instructions for how to do a single install of Arch on a LUKS encrypted drive.
 
 # LUKS Partition/Encryption Guide
 * Run lsblk to list available drives
