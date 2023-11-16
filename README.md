@@ -20,33 +20,16 @@ Attempt to create a personal Arch install script/guide
   * Run "mount /dev/nvme0n1p1 /mnt/boot" to mount the boot partition under /mnt/boot
  
  #Installing base Arch Linux packages 
-  * Run "pacstrap /mnt base linux linux-firmware nano git amd-ucode" to install the base packages
+  * Run "pacstrap /mnt base linux linux-firmware nano git amd-ucode btrfs-progs" to install the base packages
   * Run "genfstab -U /mnt >> /mnt/etc/fstab" to generate fstab table in the Arch install
   * Run "arch-chroot /mnt" to enter the install
   * Run "nano /etc/mkinitcpio.conf" to edit the mkinitcpio config
   * Add "btrfs" to the modules
   * Add "encrypt" to the Hooks before filesystems
   * Run "mkinitcpio -p linux" to recreate initramfs
-  * Run "ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime" to set local timezone
-  * Run "hwclock --systohc" to sync system clock with hardware clock
-  * Run "nano /etc/locale.gen" and uncomment the lines for "en_US.UTF-8"
-  * Run "echo "LANG=en_US.UTF-8" >> /etc/locale.conf" to set language
-  * Run "echo "framework" >> /etc/hostname" to set hostname
-  * Run "echo "127.0.0.1 localhost" >> /etc/hosts"
-  * Run "echo "::1       localhost" >> /etc/hosts"
-  * Run "echo "127.0.1.1 framework.localdomain framework" >> /etc/hosts"
-
-#Systemd setup
-* umount /boot
-* mount -o uid=0,gid=0,fmask=0077,dmask=0077 /dev/nvme0n1p1 /boot
-* bootctl --path=/boot/ install
-* nano /boot/loader/loader.conf
-* add "timeout 3" "default Arch"
-* nano /boot/loader/entries/arch.conf
-* title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /initramfs-linux.img
-options cryptdevice=UUID=c922ba7d-d096-424b-8b0a-3621ecc257a8:crypt root=UUID=fb771f94-ff7b-42be-9cbf-a17c1be77472 rootflags=subvol=@
+  * Run "git clone https://github.com/macJoshua/ArchInstall/" for the install script
+  * Modify the needed sections
+  * Run "chmod +x KDE_Install.sh"
 
 
 
