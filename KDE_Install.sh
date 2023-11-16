@@ -26,7 +26,7 @@ yay -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_s
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
 #KDE specific packages
-yay -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma  plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta
+yay -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
