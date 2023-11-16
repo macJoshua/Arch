@@ -88,4 +88,4 @@ systemctl enable acpid
 systemctl enable sddm
 systemctl enable zramd
 
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+printf "\e[1;32mDon't forget to modify bootloader information prior to reboot!\e[0m"
