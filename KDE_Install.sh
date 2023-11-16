@@ -2,6 +2,7 @@
 
 #EDIT SYSTEM CONFIGURATION PRIOR TO RUNNING SCRIPT
 ##Specifically hostname and account information in brackets
+##Also review partition information in Bootloader setup
 
 ##########################################################
 ####################System Configuration##################
@@ -37,6 +38,9 @@ echo "timeout  3" >> /boot/loader/loader.conf
 echo "default  Arch" >> /boot/loader/loader.conf
 
 #Configuring default Arch image
+#crypt should be replaced with whatever the encrypted drive is mounted as
+#refer to the bracketed section /dev/mapper/[crypt]
+#UUID can be retrieved via "blkid" command
 echo "title  Arch Linux" >> /boot/loader/entries/arch.conf
 echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch.conf
 echo "initrd  /initramfs-linux.img" >> /boot/loader/entries/arch.conf
