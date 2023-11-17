@@ -67,14 +67,14 @@ cd /opt
 rm -rf yay
 
 #Standard System Packages
-yay -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call acipd tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools libreoffice-fresh ttf-ms-fonts zramd timeshift
+yay -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call acipd tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools libreoffice-fresh ttf-ms-fonts zramd timeshift brave-bin openvpn networkmanager-openvpn
 
 # Uncomment the necessary packages
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
 #KDE specific packages
-yay -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta
+yay -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta brave-bin ttf-ms-fonts openvpn networkmanager-openvpn
 
 #Enable packages in systemctl 
 systemctl enable NetworkManager
