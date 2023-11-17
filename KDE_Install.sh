@@ -39,7 +39,7 @@ echo "[username] ALL=(ALL) ALL" >> /etc/sudoers.d/[username]
 #rm -rf yay
 
 #Standard System Packages
-pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call acipd tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools brave-bin openvpn networkmanager-openvpn
+pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools openvpn networkmanager-openvpn
 
 # Uncomment the necessary packages
 # pacman -S --noconfirm xf86-video-amdgpu
