@@ -18,7 +18,7 @@ echo "framework" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 framework.localdomain framework" >> /etc/hosts
-sudo timedatectl set-ntp true
+#sudo timedatectl set-ntp true
 echo root:[password] | chpasswd
 useradd -mG [username]
 echo [username]:[password] | chpasswd
