@@ -39,7 +39,7 @@ echo "[username] ALL=(ALL) ALL" >> /etc/sudoers.d/[username]
 #rm -rf yay
 
 #Standard System Packages
-pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools openvpn networkmanager-openvpn
+pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh acpi acpi_call tlp os-prober ntfs-3g terminus-font tlp firefox vlc libreoffice-fresh net-tools openvpn networkmanager-openvpn steam
 
 # Uncomment the necessary packages
 # pacman -S --noconfirm xf86-video-amdgpu
@@ -49,7 +49,7 @@ pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wp
 pacman -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta 
 
 #AUR specific packages
-#brave-bin ttf-ms-fonts 
+#brave-bin ttf-ms-fonts zramd
 #Enable packages in systemctl 
 systemctl enable NetworkManager
 systemctl enable bluetooth
