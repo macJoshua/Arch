@@ -20,7 +20,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 framework.localdomain framework" >> /etc/hosts
 #sudo timedatectl set-ntp true
 echo root:[password] | chpasswd
-useradd -mG [username]
+useradd -mG wheel [username]
 echo [username]:[password] | chpasswd
 echo "[username] ALL=(ALL) ALL" >> /etc/sudoers.d/[username]
 
