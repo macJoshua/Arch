@@ -77,7 +77,7 @@ pacman -S --noconfirm efibootmgr networkmanager network-manager-applet dialog wp
 pacman -S --noconfirm konsole dolphin plasma-wayland-session sddm plasma plasma-desktop plasma-workspace plasma-pa plasma-nm kde-system-meta 
 
 #AUR specific packages
-brave-bin ttf-ms-fonts 
+#brave-bin ttf-ms-fonts 
 #Enable packages in systemctl 
 systemctl enable NetworkManager
 systemctl enable bluetooth
@@ -88,6 +88,6 @@ systemctl enable tlp
 systemctl enable fstrim.timer
 systemctl enable acpid
 systemctl enable sddm
-systemctl enable zramd
+#systemctl enable zramd
 
 printf "\e[1;32mDon't forget to modify bootloader information prior to reboot!\e[0m"
