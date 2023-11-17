@@ -25,34 +25,6 @@ echo [username]:[password] | chpasswd
 echo "[username] ALL=(ALL) ALL" >> /etc/sudoers.d/[username]
 
 ##########################################################
-#####################Bootloader Setup#####################
-##########################################################
-
-#This fixes the security hole warning when installing systemd
-umount /boot
-sudo mount -o uid=0,gid=0,fmask=0077,dmask=0077 /dev/nvme0n1p1 /boot
-
-#Install systemd bootloader
-bootctl --path=/boot install 
-echo "timeout  3" >> /boot/loader/loader.conf
-echo "default  Arch" >> /boot/loader/loader.conf
-
-#Configuring default Arch image
-#crypt should be replaced with whatever the encrypted drive is mounted as
-#refer to the bracketed section /dev/mapper/[crypt]
-#UUID can be retrieved via "blkid" command
-echo "title  Arch Linux" >> /boot/loader/entries/arch.conf
-echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch.conf
-echo "initrd  /initramfs-linux.img" >> /boot/loader/entries/arch.conf
-echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch.conf
-
-#Configuring fallback Arch image
-echo "title  Arch Linux" >> /boot/loader/entries/arch-fallback.conf
-echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch-fallback.conf
-echo "initrd  /initramfs-linux-fallback.img" >> /boot/loader/entries/arch-fallback.conf
-echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch-fallback.conf
-
-##########################################################
 ###################Package Installation###################
 ##########################################################
 
@@ -91,3 +63,31 @@ systemctl enable sddm
 #systemctl enable zramd
 
 printf "\e[1;32mDon't forget to modify bootloader information prior to reboot!\e[0m"
+
+##########################################################
+#####################Bootloader Setup#####################
+##########################################################
+
+#This fixes the security hole warning when installing systemd
+#umount /boot
+#sudo mount -o uid=0,gid=0,fmask=0077,dmask=0077 /dev/nvme0n1p1 /boot
+
+#Install systemd bootloader
+bootctl --path=/boot install 
+echo "timeout  3" >> /boot/loader/loader.conf
+echo "default  Arch" >> /boot/loader/loader.conf
+
+#Configuring default Arch image
+#crypt should be replaced with whatever the encrypted drive is mounted as
+#refer to the bracketed section /dev/mapper/[crypt]
+#UUID can be retrieved via "blkid" command
+echo "title  Arch Linux" >> /boot/loader/entries/arch.conf
+echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch.conf
+echo "initrd  /initramfs-linux.img" >> /boot/loader/entries/arch.conf
+echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch.conf
+
+#Configuring fallback Arch image
+echo "title  Arch Linux" >> /boot/loader/entries/arch-fallback.conf
+echo "linux  /vmlinuz-linux" >> /boot/loader/entries/arch-fallback.conf
+echo "initrd  /initramfs-linux-fallback.img" >> /boot/loader/entries/arch-fallback.conf
+echo "options  cryptdevice=UUID=XX[nvme]XX:crypt root=UUID=XX[/dev/mapper/crypt]XX rootflags=subvol=@ rw" >> /boot/loader/entries/arch-fallback.conf
